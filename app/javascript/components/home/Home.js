@@ -15,7 +15,7 @@ export default class Home extends React.Component{
         return(
             <div>
                 <Jumbotron />
-                <Table />
+                <Table modules={this.state.modules}/>
             </div>
         )
     }
