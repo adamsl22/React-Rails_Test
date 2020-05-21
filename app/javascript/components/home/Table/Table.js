@@ -1,11 +1,16 @@
 import React from 'react';
 import Item from './Item';
+import ActiveItem from './ActiveItem';
 
 export default class Table extends React.Component{
     render(){
 
         const items = this.props.modules.map((data) => {
-            return <Item key={data.id} title={data.title} description={data.description} />
+            return(
+                data.active ?
+                <ActiveItem key={data.id} title={data.title} description={data.description} /> :
+                <Item key={data.id} title={data.title} description={data.description} />
+            )
         })
 
         return(
