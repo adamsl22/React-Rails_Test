@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   get 'pages/index'
-  get 'videos', to: 'pages#episodes'
+  get 'videos', to: 'pages#videos'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
