@@ -1,20 +1,30 @@
 import React from 'react';
 import Jumbotron from './Jumbotron';
 import Table from './Table/Table';
+import axios from 'axios';
 
 export default class Home extends React.Component{
     state = {
-        modules: [
-            {id: 1, title: '', description: '', active: false},
-            {id: 2, title: '', description: '', active: false},
-            {id: 3, title: '', description: '', active: false},
-            {id: 4, title: '', description: '', active: false}
-        ]
+        modules: []
+    }
+
+    componentDidMount(){
+        axios.get('/videos.json')
+        .then(data => {
+            let modules = []
+            data.data.data.map((data) => {
+                modules.push({id: data.id, title: data.title, description: data.description, active: false})
+                this.setState({modules})
+            })
+        })
+        .catch(data => {
+            debugger
+        })
     }
 
     handleWatchVideo(i, e){
         e.preventDefault()
-        const modules = [...this.state.modules]
+        let modules = [...this.state.modules]
         modules.map(data => {
             data.active = false
         })
