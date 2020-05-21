@@ -32,7 +32,7 @@ export default function Item(props){
                                     <h4>{props.title}</h4>
                                     <p>{props.description}</p>
                                     <div className='cta-wrapper'>
-                                        <Button className='btn cta-button'>Watch</Button>
+                                        <Button onClick={props.handleWatchVideo} className='btn cta-button'>Watch</Button>
                                     </div>
                                 </div>
                             </div>

@@ -6,10 +6,11 @@ export default class Table extends React.Component{
     render(){
 
         const items = this.props.modules.map((data) => {
+            const handleWatchVideo = this.props.handleWatchVideo.bind(this, data)
             return(
                 data.active ?
-                <ActiveItem key={data.id} title={data.title} description={data.description} /> :
-                <Item key={data.id} title={data.title} description={data.description} />
+                <ActiveItem handleWatchVideo={handleWatchVideo} key={data.id} title={data.title} description={data.description} /> :
+                <Item handleWatchVideo={handleWatchVideo} key={data.id} title={data.title} description={data.description} />
             )
         })
 
