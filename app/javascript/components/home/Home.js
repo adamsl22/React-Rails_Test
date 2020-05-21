@@ -1,4 +1,5 @@
 import React from 'react';
+import Jumbotron from './Jumbotron';
 
 export default class Home extends React.Component{
     state = {
@@ -11,7 +12,7 @@ export default class Home extends React.Component{
     }
     render(){
         return(
-            <div>This is the Home component.</div>
+            <div><Jumbotron /></div>
         )
     }
 }
