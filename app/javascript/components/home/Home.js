@@ -1,5 +1,6 @@
 import React from 'react';
 import Jumbotron from './Jumbotron';
+import Table from './Table/Table';
 
 export default class Home extends React.Component{
     state = {
@@ -12,7 +13,10 @@ export default class Home extends React.Component{
     }
     render(){
         return(
-            <div><Jumbotron /></div>
+            <div>
+                <Jumbotron />
+                <Table />
+            </div>
         )
     }
 }
