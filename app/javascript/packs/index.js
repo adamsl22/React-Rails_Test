@@ -4,7 +4,8 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import PropTypes from 'prop-types'
+import 'bootstrap/dist/css/bootstrap.css'
+import Home from '../components/home/Home'
 
 const Hello = props => (
   <div>Hello {props.name}!</div>
